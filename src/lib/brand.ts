@@ -1,28 +1,21 @@
 /**
- * ┌─────────────────────────────────────────────────────────────┐
- * │  VALEN — BRAND CONFIG (single source of truth)               │
- * │                                                             │
- * │  Tudo que é "marca" mora aqui. Quando o briefing chegar,    │
- * │  é só trocar estes valores que a landing inteira re-skina.  │
- * │  Cores reais ficam em globals.css (tokens CSS).             │
- * │                                                             │
- * │  >>> PLACEHOLDERS — aguardando briefing da Valen <<<        │
- * └─────────────────────────────────────────────────────────────┘
+ * VALEN — BRAND CONFIG (single source of truth)
+ * Paleta e identidade reais extraídas do logo + debriefing.
  */
-
 export const brand = {
   name: "Valen",
-  // TODO(briefing): tagline oficial em 1 frase
-  tagline: "O segundo cérebro que faz sua clínica escalar.",
-  // TODO(briefing): descrição/posicionamento
+  lambda: "λ",
+  tagline: "Menos planilha, mais paciente.",
   description:
-    "Sistemas sob medida, agentes de IA e CRM dedicado para clínicas que querem crescer sem perder o controle.",
-  domain: "valen.app", // TODO(briefing): domínio real
-  // TODO(briefing): CTA principal — demo? venda? lead?
+    "A Valen implementa sistemas sob medida de automação e IA para clínicas e negócios premium. Atendimento que não dorme, follow-up que não falha e um CRM que substitui suas planilhas.",
+  domain: "valen.app", // TODO: confirmar domínio real
+  signature: "Oficina de Software · MMXXVI · São Paulo",
   cta: {
-    primary: "Agendar demonstração",
-    secondary: "Ver o sistema por dentro",
+    primary: "Agendar diagnóstico",
+    secondary: "Ver como funciona",
   },
+  // canal de contato — TODO: trocar pelo número/link real
+  whatsapp: "https://wa.me/0000000000",
 } as const;
 
 export type Brand = typeof brand;

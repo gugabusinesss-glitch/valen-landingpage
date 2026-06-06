@@ -1,49 +1,110 @@
 @import "tailwindcss";
 
 /* ════════════════════════════════════════════════════════════════
-   VALEN · BRAND TOKENS  ── PLACEHOLDER (aguardando briefing) ──
-   Troque só estes valores quando o briefing chegar.
+   VALEN · DESIGN SYSTEM
+   Paleta medida do logo: cream #ECE7DC · ink #0A0A0A · teal petróleo
+   Tokens semânticos + compatibilidade shadcn (21st.dev) num lugar só.
    ════════════════════════════════════════════════════════════════ */
 :root {
-  /* superfícies */
-  --bg: #060709;
-  --bg-elevated: #0c0e12;
-  --surface: #12151b;
-  --border: #20242e;
+  /* marca */
+  --cream: #ece7dc;
+  --ink: #090a0a;
+  --teal: #2a8c81;
+  --teal-bright: #3bb7a6;
+  --teal-deep: #123f39;
+
+  /* superfícies (escuro) */
+  --background: #080b0a;
+  --card: #0d1312;
+  --popover: #0d1312;
+  --muted: #131b19;
+  --secondary: #131b19;
+  --border: #23302c;
+  --input: #23302c;
 
   /* texto */
-  --fg: #f4f6fb;
-  --fg-muted: #9aa3b2;
-  --fg-subtle: #5d6675;
+  --foreground: #ece7dc;
+  --card-foreground: #ece7dc;
+  --popover-foreground: #ece7dc;
+  --muted-foreground: #93a09a;
+  --secondary-foreground: #ece7dc;
+  --subtle: #5e6b64;
 
-  /* acento (placeholder — virá do branding da Valen) */
-  --accent: #5b8cff;
-  --accent-strong: #3d6dff;
-  --accent-foreground: #ffffff;
-  --accent-glow: rgba(91, 140, 255, 0.35);
+  /* acento / ações */
+  --primary: #2a8c81;
+  --primary-foreground: #04100e;
+  --accent: #16433d;
+  --accent-foreground: #ece7dc;
+  --ring: #2a8c81;
+  --glow: rgba(59, 183, 166, 0.45);
 
-  /* forma */
-  --radius: 14px;
+  --radius: 0.9rem;
 }
 
 @theme inline {
-  --color-background: var(--bg);
-  --color-bg-elevated: var(--bg-elevated);
-  --color-surface: var(--surface);
-  --color-border: var(--border);
-
-  --color-foreground: var(--fg);
-  --color-muted: var(--fg-muted);
-  --color-subtle: var(--fg-subtle);
-
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-accent-strong: var(--accent-strong);
   --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* extras de marca */
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-teal: var(--teal);
+  --color-teal-bright: var(--teal-bright);
+  --color-teal-deep: var(--teal-deep);
+  --color-subtle: var(--subtle);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
 
   --radius-brand: var(--radius);
+
+  /* animações (geram utilitários animate-*) */
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-fade-in: fade-in 0.7s ease forwards;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -58,15 +119,43 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: var(--teal);
+  color: var(--primary-foreground);
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* texto com leve gradiente cream (headlines) */
+.text-cream-gradient {
+  background: linear-gradient(180deg, #f6f2e9 0%, #ece7dc 45%, #b7b1a4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* loader fallback (usado por componentes lazy) */
+.loader {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -75,5 +164,6 @@ body {
   *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
