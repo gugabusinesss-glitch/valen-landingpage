@@ -129,7 +129,7 @@ export const differentiators = {
   items: [
     {
       title: "Feito sob medida, não de prateleira",
-      desc: "A maioria libera o mesmo sistema pronto pra todo mundo usar. A Valen constrói o seu do zero, encaixado no fluxo da sua clínica e no jeito que você atende. O sistema é seu, não um molde genérico que serve pra qualquer um.",
+      desc: "Com software de prateleira, a clínica tem que se moldar ao sistema. Com a Valen é o contrário: o sistema se adapta ao formato da sua clínica, ao seu fluxo e ao seu jeito de atender. Você nunca muda como trabalha pra caber numa ferramenta.",
     },
     {
       title: "Sistema, não pessoa",
