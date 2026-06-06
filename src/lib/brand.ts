@@ -14,8 +14,8 @@ export const brand = {
     primary: "Agendar diagnóstico",
     secondary: "Ver como funciona",
   },
-  // canal de contato — TODO: trocar pelo número/link real
-  whatsapp: "https://wa.me/0000000000",
+  // canal de contato
+  whatsapp: "https://wa.me/5511964781002",
 } as const;
 
 export type Brand = typeof brand;

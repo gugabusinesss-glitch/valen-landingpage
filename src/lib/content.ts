@@ -141,7 +141,7 @@ export const differentiators = {
     },
     {
       title: "Relacionamento, não ticket",
-      desc: "Suporte no WhatsApp direto, não em formulário. Você fala comigo — não com atendente de primeiro nível.",
+      desc: "Suporte no WhatsApp direto, não em formulário. Quem atende é a Valen — não um atendente de primeiro nível.",
     },
   ],
 } as const;
@@ -152,27 +152,27 @@ export const objections = {
   items: [
     {
       q: "É caro?",
-      a: "Quanto vale uma sessão no seu negócio? Se a gente recuperar 3 clientes que sumiriam, o sistema se paga no primeiro mês.",
+      a: "Quanto vale uma sessão no seu negócio? Recuperando 3 pacientes que sumiriam, o sistema da Valen se paga já no primeiro mês.",
     },
     {
-      q: "Já tentei delegar e não funcionou.",
-      a: "Entendo. A diferença é que não estou te vendendo uma pessoa — e sim um sistema. Sistema não falta, não dorme, não some.",
+      q: "Já tentei delegar e não deu certo.",
+      a: "A Valen não entrega uma pessoa — entrega um sistema. Sistema não falta, não dorme, não some. É aí que mora a diferença.",
     },
     {
-      q: "Será que funciona pro meu nicho?",
-      a: "Implementamos especificamente para clínicas e estética. Conheço o fluxo do seu negócio antes mesmo da call.",
+      q: "Funciona pro meu nicho?",
+      a: "A Valen implementa especificamente para clínicas e estética — e já chega conhecendo o fluxo do seu negócio, antes mesmo da call.",
     },
     {
       q: "Não tenho tempo pra implementar.",
-      a: "Você não implementa nada. Eu faço tudo. Você só me explica como funciona hoje — e recebe o sistema pronto.",
+      a: "Você não implementa nada — a Valen faz tudo. Basta explicar como a operação funciona hoje e o sistema chega pronto.",
     },
     {
       q: "Tenho uma proposta mais barata.",
-      a: "Proposta mais barata entrega ferramenta. Eu entrego operação funcionando. São coisas diferentes.",
+      a: "Proposta mais barata entrega ferramenta. A Valen entrega operação funcionando. São coisas diferentes.",
     },
     {
-      q: "Preciso pensar.",
-      a: "Sem problema. Posso te mostrar em 15 minutos como funciona num caso parecido com o seu — sem compromisso.",
+      q: "Preciso pensar com calma.",
+      a: "Sem problema. Em 15 minutos a Valen mostra como ficaria a sua operação num caso parecido — sem compromisso nenhum.",
     },
   ],
 } as const;
@@ -180,6 +180,6 @@ export const objections = {
 export const finalCta = {
   eyebrow: "Vamos conversar",
   title: "Seu negócio começa a funcionar quando você não está presente.",
-  sub: "Em 15 minutos eu te mostro como ficaria a operação da sua clínica rodando no automático. Sem compromisso.",
+  sub: "Em 15 minutos, a Valen mostra como ficaria a operação da sua clínica rodando no automático. Sem compromisso.",
   tagline: "Menos planilha, mais paciente.",
 } as const;
