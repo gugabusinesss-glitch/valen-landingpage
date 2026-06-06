@@ -21,7 +21,7 @@ export const hero = {
 
 export const stats = [
   { value: "5 min", label: "é o limite. Depois disso, o lead converte 80% menos." },
-  { value: "30 dias", label: "do contrato ao sistema no ar — com data no contrato." },
+  { value: "30 dias", label: "do contrato ao sistema no ar, com data no contrato." },
   { value: "24/7", label: "atendimento e follow-up que não falta, não dorme, não some." },
 ] as const;
 
@@ -29,7 +29,7 @@ export const problem = {
   eyebrow: "O problema",
   title: "Seu negócio cresceu. E agora trava em você.",
   intro:
-    "Você construiu algo que funciona — mas tudo ainda passa pela sua mão. Quando você não está, a operação para. Escalar virou sinônimo de trabalhar mais.",
+    "Você construiu algo que funciona, mas tudo ainda passa pela sua mão. Quando você não está, a operação para. Escalar virou sinônimo de trabalhar mais.",
   quote: "Eu prefiro fazer eu mesmo do que ensinar alguém e ainda ter que corrigir depois.",
   quoteNote: "Esse é o pensamento de 8 em cada 10 donos. É exatamente contra ele que a Valen trabalha.",
   pains: [
@@ -43,11 +43,11 @@ export const problem = {
     },
     {
       title: "A equipe vive na planilha",
-      body: "Horas por dia copiando dado de um lugar pro outro — e mesmo assim sempre escapa um erro.",
+      body: "Horas por dia copiando dado de um lugar pro outro, e mesmo assim sempre escapa um erro.",
     },
     {
       title: "O paciente some entre sessões",
-      body: "A primeira sessão acontece. A segunda — onde está o lucro — depende de alguém lembrar de chamar. E ninguém lembra.",
+      body: "A primeira sessão acontece. A segunda, onde está o lucro, depende de alguém lembrar de chamar. E ninguém lembra.",
     },
     {
       title: "Você decide no escuro",
@@ -101,22 +101,22 @@ export const process = {
   title: "Do contrato ao sistema rodando em 30 dias.",
   steps: [
     {
-      range: "Dias 1–3",
+      range: "Dias 1 a 3",
       title: "Diagnóstico",
       desc: "Mapeamos a operação atual, o fluxo de atendimento e os gargalos. Definimos o que será automatizado.",
     },
     {
-      range: "Dias 4–7",
+      range: "Dias 4 a 7",
       title: "Arquitetura",
       desc: "Desenhamos o sistema específico do seu negócio: CRM, pipeline, fluxos de automação e scripts.",
     },
     {
-      range: "Dias 8–21",
+      range: "Dias 8 a 21",
       title: "Implementação",
       desc: "Construção do CRM, automações, agentes de IA e integrações. Você acompanha cada etapa.",
     },
     {
-      range: "Dias 22–30",
+      range: "Dias 22 a 30",
       title: "Go-live & Suporte",
       desc: "Sistema no ar, equipe treinada, operação monitorada. Ajustes finos com base no uso real.",
     },
@@ -133,15 +133,15 @@ export const differentiators = {
     },
     {
       title: "Especialista no seu nicho",
-      desc: "Conhecemos o fluxo de clínica, estética e laser. Chegamos já sabendo a dor — sem semanas pra entender o negócio.",
+      desc: "Conhecemos o fluxo de clínica, estética e laser. Chegamos já sabendo a dor, sem semanas pra entender o negócio.",
     },
     {
       title: "Entrega em 30 dias",
-      desc: "Agência grande demora 60–90 dias, freelancer não tem prazo. A Valen entrega em 30 — com data no contrato.",
+      desc: "Agência grande demora 60 a 90 dias, freelancer não tem prazo. A Valen entrega em 30, com data no contrato.",
     },
     {
       title: "Relacionamento, não ticket",
-      desc: "Suporte no WhatsApp direto, não em formulário. Quem atende é a Valen — não um atendente de primeiro nível.",
+      desc: "Suporte no WhatsApp direto, não em formulário. Quem atende é a Valen, não um atendente de primeiro nível.",
     },
   ],
 } as const;
@@ -156,15 +156,15 @@ export const objections = {
     },
     {
       q: "Já tentei delegar e não deu certo.",
-      a: "A Valen não entrega uma pessoa — entrega um sistema. Sistema não falta, não dorme, não some. É aí que mora a diferença.",
+      a: "A Valen não entrega uma pessoa, e sim um sistema. Sistema não falta, não dorme, não some. É aí que mora a diferença.",
     },
     {
       q: "Funciona pro meu nicho?",
-      a: "A Valen implementa especificamente para clínicas e estética — e já chega conhecendo o fluxo do seu negócio, antes mesmo da call.",
+      a: "A Valen implementa especificamente para clínicas e estética, e já chega conhecendo o fluxo do seu negócio, antes mesmo da call.",
     },
     {
       q: "Não tenho tempo pra implementar.",
-      a: "Você não implementa nada — a Valen faz tudo. Basta explicar como a operação funciona hoje e o sistema chega pronto.",
+      a: "Você não implementa nada. A Valen faz tudo. Basta explicar como a operação funciona hoje e o sistema chega pronto.",
     },
     {
       q: "Tenho uma proposta mais barata.",
@@ -172,7 +172,7 @@ export const objections = {
     },
     {
       q: "Preciso pensar com calma.",
-      a: "Sem problema. Em 15 minutos a Valen mostra como ficaria a sua operação num caso parecido — sem compromisso nenhum.",
+      a: "Sem problema. Em 15 minutos a Valen mostra como ficaria a sua operação num caso parecido, sem compromisso nenhum.",
     },
   ],
 } as const;

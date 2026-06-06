@@ -22,10 +22,10 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${brand.domain}`),
-  title: `${brand.name} — ${brand.tagline}`,
+  title: `${brand.name} · ${brand.tagline}`,
   description: brand.description,
   openGraph: {
-    title: `${brand.name} — ${brand.tagline}`,
+    title: `${brand.name} · ${brand.tagline}`,
     description: brand.description,
     type: "website",
     locale: "pt_BR",

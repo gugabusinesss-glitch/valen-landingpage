@@ -18,7 +18,7 @@ export function Showcase() {
               </span>
             </h2>
             <p className="mt-4 max-w-xl text-muted-foreground">
-              Comercial, pós-venda, repasse médico e agentes de IA — tudo num
+              Comercial, pós-venda, repasse médico e agentes de IA. Tudo num
               painel feito sob medida pra você.
             </p>
           </div>
