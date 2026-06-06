@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { brand } from "@/lib/brand";
 import { nav } from "@/lib/content";
 import { Logo } from "./primitives";
+import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -49,9 +50,12 @@ export function SiteNav() {
           ))}
         </nav>
 
-        <Button href={brand.whatsapp} size="default" className="shrink-0">
-          {brand.cta.primary}
-        </Button>
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
+          <Button href={brand.whatsapp} size="default" className="hidden shrink-0 sm:inline-flex">
+            {brand.cta.primary}
+          </Button>
+        </div>
       </div>
     </motion.header>
   );

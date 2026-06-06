@@ -18,22 +18,33 @@ export function Container({
 
 export function LambdaMark({
   size = 26,
-  variant = "cream",
   className,
 }: {
   size?: number;
-  variant?: "cream" | "ink";
   className?: string;
 }) {
+  const w = Math.round(size * 0.669);
   return (
-    <Image
-      src={`/brand/lambda-${variant}.png`}
-      alt="λ"
-      width={Math.round(size * 0.669)}
-      height={size}
-      className={className}
-      priority
-    />
+    <>
+      {/* tinta no claro */}
+      <Image
+        src="/brand/lambda-ink.png"
+        alt="λ"
+        width={w}
+        height={size}
+        className={cn("block dark:hidden", className)}
+        priority
+      />
+      {/* cream no escuro */}
+      <Image
+        src="/brand/lambda-cream.png"
+        alt="λ"
+        width={w}
+        height={size}
+        className={cn("hidden dark:block", className)}
+        priority
+      />
+    </>
   );
 }
 

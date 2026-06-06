@@ -186,6 +186,9 @@ const ShaderBackground = ({ className }: { className?: string }) => {
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
     window.addEventListener("resize", resizeCanvas);
+    // redimensiona também quando o canvas fica visível (ex.: troca de tema)
+    const ro = new ResizeObserver(() => resizeCanvas());
+    ro.observe(canvas);
     resizeCanvas();
 
     let raf = 0;
@@ -218,6 +221,7 @@ const ShaderBackground = ({ className }: { className?: string }) => {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      ro.disconnect();
       cancelAnimationFrame(raf);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

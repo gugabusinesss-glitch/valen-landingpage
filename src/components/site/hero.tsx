@@ -13,19 +13,42 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export function Hero() {
   return (
     <section id="top" className="relative min-h-screen overflow-hidden">
-      {/* fundo vivo */}
-      <div className="absolute inset-0 -z-20">
+      {/* ─── ESCURO: shader vivo ─── */}
+      <div className="absolute inset-0 -z-20 hidden dark:block">
         <ShaderBackground className="h-full w-full opacity-90" />
       </div>
-      {/* overlays de leitura */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/50 via-background/55 to-background" />
+      <div className="absolute inset-0 -z-10 hidden bg-gradient-to-b from-background/50 via-background/55 to-background dark:block" />
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 hidden dark:block"
         style={{
           background:
             "radial-gradient(60% 50% at 50% 38%, transparent 0%, rgba(8,11,10,0.35) 70%, var(--background) 100%)",
         }}
       />
+
+      {/* ─── CLARO: campo creme com brilho teal ─── */}
+      <div className="absolute inset-0 -z-20 block dark:hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(65% 55% at 50% 0%, rgba(28,114,104,0.12) 0%, transparent 58%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-60"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage:
+              "radial-gradient(ellipse 60% 50% at 50% 35%, #000 25%, transparent 72%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 60% 50% at 50% 35%, #000 25%, transparent 72%)",
+          }}
+        />
+      </div>
+      <div className="absolute inset-0 -z-10 block bg-gradient-to-b from-transparent to-background dark:hidden" />
 
       <Container className="relative flex min-h-screen flex-col items-center justify-center pb-24 pt-32 text-center">
         <motion.div

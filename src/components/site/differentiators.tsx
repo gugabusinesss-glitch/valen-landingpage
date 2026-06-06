@@ -11,7 +11,7 @@ export function Differentiators() {
   return (
     <section className="relative py-28 md:py-36">
       <Container>
-        <Card className="relative overflow-hidden border-border bg-[#0a0f0e] p-8 md:p-14">
+        <Card className="relative overflow-hidden border-border bg-card p-8 md:p-14">
           <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="var(--teal-bright)" />
 
           <div className="relative z-10">
@@ -33,7 +33,7 @@ export function Differentiators() {
                   <Reveal
                     key={item.title}
                     delay={(i % 2) * 0.08}
-                    className="bg-[#0c1211] p-7"
+                    className="bg-muted p-7"
                   >
                     <span className="inline-flex size-10 items-center justify-center rounded-full bg-teal-deep/50 text-teal-bright">
                       <Icon className="size-5" />

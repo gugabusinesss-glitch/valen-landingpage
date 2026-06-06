@@ -1,19 +1,59 @@
 @import "tailwindcss";
 
+/* dark mode por classe (.dark), não por media-query */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ════════════════════════════════════════════════════════════════
-   VALEN · DESIGN SYSTEM
-   Paleta medida do logo: cream #ECE7DC · ink #0A0A0A · teal petróleo
-   Tokens semânticos + compatibilidade shadcn (21st.dev) num lugar só.
+   VALEN · DESIGN SYSTEM — TEMA CLARO (padrão) + ESCURO (.dark)
+   Paleta da marca: cream #ECE7DC · ink #0A0A0A · teal petróleo.
+   Tokens semânticos + compat. shadcn (21st.dev) num lugar só.
    ════════════════════════════════════════════════════════════════ */
 :root {
   /* marca */
+  --cream: #ece7dc;
+  --ink: #0a0a0a;
+  --teal: #1c7268;
+  --teal-bright: #157065;
+  --teal-deep: #d2e3de;
+
+  /* superfícies (claro — papel quente) */
+  --background: #f4f1e8;
+  --card: #fbfaf5;
+  --popover: #fbfaf5;
+  --muted: #ebe6d9;
+  --secondary: #ebe6d9;
+  --border: #ddd6c6;
+  --input: #ddd6c6;
+
+  /* texto */
+  --foreground: #161d1a;
+  --card-foreground: #161d1a;
+  --popover-foreground: #161d1a;
+  --muted-foreground: #5d655e;
+  --secondary-foreground: #161d1a;
+  --subtle: #8a9089;
+
+  /* acento / ações */
+  --primary: #1c7268;
+  --primary-foreground: #f6f3ea;
+  --accent: #dfeae6;
+  --accent-foreground: #14322c;
+  --ring: #1c7268;
+  --glow: rgba(28, 114, 104, 0.28);
+
+  --radius: 0.9rem;
+
+  /* gradiente da headline (tons de tinta no claro) */
+  --headline-grad: linear-gradient(180deg, #1d2a25 0%, #161d1a 45%, #45554e 100%);
+}
+
+.dark {
   --cream: #ece7dc;
   --ink: #090a0a;
   --teal: #2a8c81;
   --teal-bright: #3bb7a6;
   --teal-deep: #123f39;
 
-  /* superfícies (escuro) */
   --background: #080b0a;
   --card: #0d1312;
   --popover: #0d1312;
@@ -22,7 +62,6 @@
   --border: #23302c;
   --input: #23302c;
 
-  /* texto */
   --foreground: #ece7dc;
   --card-foreground: #ece7dc;
   --popover-foreground: #ece7dc;
@@ -30,7 +69,6 @@
   --secondary-foreground: #ece7dc;
   --subtle: #5e6b64;
 
-  /* acento / ações */
   --primary: #2a8c81;
   --primary-foreground: #04100e;
   --accent: #16433d;
@@ -38,7 +76,7 @@
   --ring: #2a8c81;
   --glow: rgba(59, 183, 166, 0.45);
 
-  --radius: 0.9rem;
+  --headline-grad: linear-gradient(180deg, #f6f2e9 0%, #ece7dc 45%, #b7b1a4 100%);
 }
 
 @theme inline {
@@ -60,7 +98,6 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* extras de marca */
   --color-cream: var(--cream);
   --color-ink: var(--ink);
   --color-teal: var(--teal);
@@ -74,10 +111,8 @@
 
   --radius-brand: var(--radius);
 
-  /* animações (geram utilitários animate-*) */
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
   --animate-fade-in: fade-in 0.7s ease forwards;
-  --animate-marquee: marquee 40s linear infinite;
 }
 
 @keyframes spotlight {
@@ -98,14 +133,6 @@
     opacity: 1;
   }
 }
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
 /* ════════════════════════════════════════════════════════════════
    BASE
@@ -124,6 +151,7 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
@@ -135,15 +163,13 @@ body {
   font-family: var(--font-serif), Georgia, serif;
 }
 
-/* texto com leve gradiente cream (headlines) */
 .text-cream-gradient {
-  background: linear-gradient(180deg, #f6f2e9 0%, #ece7dc 45%, #b7b1a4 100%);
+  background: var(--headline-grad);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* loader fallback (usado por componentes lazy) */
 .loader {
   width: 28px;
   height: 28px;
