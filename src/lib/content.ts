@@ -128,6 +128,10 @@ export const differentiators = {
   title: "O que nenhum concorrente combina ao mesmo tempo.",
   items: [
     {
+      title: "Feito sob medida, não de prateleira",
+      desc: "A maioria libera o mesmo sistema pronto pra todo mundo usar. A Valen constrói o seu do zero, encaixado no fluxo da sua clínica e no jeito que você atende. O sistema é seu, não um molde genérico que serve pra qualquer um.",
+    },
+    {
       title: "Sistema, não pessoa",
       desc: "A solução não depende de ninguém físico. Não falta, não dorme, não some. Derruba o maior trauma de quem já tentou delegar.",
     },
