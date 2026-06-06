@@ -93,13 +93,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease }}
-          className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+          className="mt-10 flex w-full max-w-sm flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:justify-center"
         >
-          <Button href={brand.whatsapp} size="lg">
+          <Button href={brand.whatsapp} size="lg" className="w-full sm:w-auto">
             {brand.cta.primary}
             <ArrowRight className="size-4" />
           </Button>
-          <Button href="#sistema" variant="outline" size="lg">
+          <Button href="#sistema" variant="outline" size="lg" className="w-full sm:w-auto">
             <Play className="size-4" />
             {brand.cta.secondary}
           </Button>

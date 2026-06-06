@@ -66,8 +66,13 @@ export function Solution() {
           </div>
         </div>
 
-        <Reveal delay={0.15} className="flex min-h-[26rem] items-center justify-center">
-          <DisplayCards cards={cards} />
+        <Reveal
+          delay={0.15}
+          className="flex min-h-[20rem] items-center justify-center overflow-hidden sm:min-h-[26rem]"
+        >
+          <div className="origin-center scale-[0.62] sm:scale-[0.82] lg:scale-100">
+            <DisplayCards cards={cards} />
+          </div>
         </Reveal>
       </Container>
     </section>

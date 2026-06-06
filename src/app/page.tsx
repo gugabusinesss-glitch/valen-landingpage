@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <SiteNav />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <Stats />
         <Problem />
