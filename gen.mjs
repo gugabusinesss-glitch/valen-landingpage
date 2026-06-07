@@ -1,3 +1,5 @@
+// Gerador de artes de Instagram da Valen (1080x1350, versao clara).
+// Requer playwright: pnpm add -D playwright && pnpm exec playwright install chromium
 import { chromium } from 'playwright';
 import fs from 'fs';
 
@@ -22,8 +24,9 @@ main{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justi
 .kicker .dot{width:9px;height:9px;border-radius:50%;background:#1b7a6f;box-shadow:0 0 14px rgba(27,122,111,.6)}
 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#157065}
 b{color:#157065;font-weight:700}
-.h-cover{font-size:96px;font-weight:800;line-height:1.02;letter-spacing:-.02em}
+.h-cover{font-size:94px;font-weight:800;line-height:1.02;letter-spacing:-.02em}
 .h-body{font-size:70px;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+.h-body.sm{font-size:56px;line-height:1.14}
 .h-sol{font-size:74px;font-weight:700;line-height:1.06;letter-spacing:-.01em}
 .big-stat{font-size:300px;font-weight:900;line-height:.9;letter-spacing:-.04em;background:linear-gradient(180deg,#1c9486,#15625b);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat-sub{font-size:46px;font-weight:500;line-height:1.15;color:#3f4a45;margin-top:18px;max-width:760px}
@@ -36,19 +39,18 @@ footer .cta{color:#15201c;font-weight:700;letter-spacing:.02em}
 `;
 
 function mainHTML(s){
-  if(s.type==='cover') return `<main><div class="kicker"><span class="dot"></span>${s.kick||'Atenção'}</div><h1 class="h-cover">${s.text}</h1></main>`;
-  if(s.type==='body')  return `<main><h2 class="h-body">${s.text}</h2></main>`;
+  if(s.type==='cover') return `<main><div class="kicker"><span class="dot"></span>${s.kick||''}</div><h1 class="h-cover">${s.text}</h1></main>`;
+  if(s.type==='body')  return `<main><h2 class="h-body ${s.sm?'sm':''}">${s.text}</h2></main>`;
   if(s.type==='stat')  return `<main><div class="big-stat">${s.big}</div><p class="stat-sub">${s.text}</p></main>`;
-  if(s.type==='solution') return `<main><div class="kicker"><span class="dot"></span>A virada</div><h2 class="h-sol">${s.text}</h2></main>`;
-  if(s.type==='cta')   return `<main><h2 class="h-body">${s.text}</h2><div><span class="pill">${s.cta} →</span></div></main>`;
-  if(s.type==='impact')return `<main><div class="muted"><div class="kicker" style="color:#9a9c93">Software de prateleira</div><p class="ln">A clínica tem que se moldar ao sistema.</p></div><div class="vs">e na Valen?</div><div><div class="kicker"><span class="dot"></span>Com a Valen</div><h2 class="h-sol">O sistema se molda <em>à sua clínica.</em></h2></div></main>`;
+  if(s.type==='solution') return `<main><div class="kicker"><span class="dot"></span>${s.kick||'A virada'}</div><h2 class="h-sol">${s.text}</h2></main>`;
+  if(s.type==='cta')   return `<main><h2 class="h-body ${s.sm?'sm':''}">${s.text}</h2><div><span class="pill">${s.cta} →</span></div></main>`;
   return '<main></main>';
 }
-
 function slideHTML(post,i,s){
   const n=String(i+1).padStart(2,'0'), total=String(post.slides.length).padStart(2,'0');
-  const right = post.slides.length>1 ? `<span class="count">${n} / ${total}</span>` : `<span></span>`;
-  const foot = (i < post.slides.length-1 && post.slides.length>1) ? `<span class="cta">arraste →</span>` : `<span class="cta">@valen</span>`;
+  const last = i===post.slides.length-1;
+  const right = `<span class="count">${n} / ${total}</span>`;
+  const foot = last ? `<span class="cta">${post.foot||'Link na bio'}</span>` : `<span class="cta">arraste →</span>`;
   return `<div class="slide"><div class="glow"></div><div class="glow b"></div><div class="grid"></div><img class="wm-lam" src="${lam}">
   <header><div class="brand"><img src="${lam}"><div class="dv"></div><span class="wm">VALEN</span></div>${right}</header>
   ${mainHTML(s)}
@@ -56,16 +58,33 @@ function slideHTML(post,i,s){
 }
 
 const posts = [
- { id:'p3', slides:[
-   {type:'cover', kick:'A dor que ninguém vê', text:'Sua clínica perde paciente <em>todo dia.</em><br>E ninguém percebe.'},
-   {type:'body', text:'Um lead chega no WhatsApp às <b>14h03</b> querendo agendar.'},
-   {type:'body', text:'A secretária está atendendo. Ninguém responde na hora.'},
-   {type:'stat', big:'80%', text:'menos chance de o lead fechar depois de só <b>5 minutos</b> sem resposta.'},
-   {type:'body', text:'Ele não esperou. Foi pro concorrente que respondeu na hora.'},
-   {type:'solution', text:'A Valen responde, qualifica e agenda <em>em segundos.</em> 24 horas por dia.'},
-   {type:'cta', text:'Quantos pacientes sumiram essa semana sem você saber?', cta:'Diagnóstico no link'},
+ { id:'p1', foot:'Seguir @valen', slides:[
+   {type:'cover', kick:'Quem é a Valen', text:'A maioria das clínicas trava sempre no mesmo lugar: <em>no operacional.</em>'},
+   {type:'body', text:'Quanto mais a clínica cresce, mais coisa passa pela mão do dono.', sm:true},
+   {type:'body', text:'Lead parado no WhatsApp. Planilha da secretária. Paciente que some entre consultas.', sm:true},
+   {type:'solution', kick:'A verdade', text:'Não falta marketing. <em>Falta sistema.</em>'},
+   {type:'body', text:'A Valen constrói o sistema que faz a clínica rodar <b>sem depender de ninguém.</b>', sm:true},
+   {type:'body', text:'Comercial, pós-venda, repasse médico e agentes de IA. Tudo <em>sob medida.</em>', sm:true},
+   {type:'cta', text:'Esse perfil vai mostrar como virar a sua clínica do avesso.', cta:'Seguir @valen', sm:true},
  ]},
- { id:'p2', slides:[ {type:'impact'} ]},
+ { id:'p5', foot:'Diagnóstico no link', slides:[
+   {type:'cover', kick:'A pergunta difícil', text:'Se você parar uma semana, a sua clínica <em>para junto?</em>'},
+   {type:'body', text:'Esse é o sinal de que a clínica depende de você pra <b>tudo.</b>'},
+   {type:'body', text:'Cada decisão, cada atendimento, cada mensagem passa pela sua mão.', sm:true},
+   {type:'body', text:'Crescer, assim, vira sinônimo de <em>trabalhar mais.</em> Não de ganhar mais.', sm:true},
+   {type:'solution', kick:'A virada', text:'A saída não é se esforçar mais. É montar <em>processo e sistema.</em>'},
+   {type:'body', text:'A Valen cria a estrutura que faz a clínica operar <b>mesmo sem você presente.</b>', sm:true},
+   {type:'cta', text:'Sua clínica trabalha pra você, ou você trabalha pra ela?', cta:'Diagnóstico no link'},
+ ]},
+ { id:'p6', foot:'Agende no link', slides:[
+   {type:'cover', kick:'Como funciona', text:'Da planilha ao sistema rodando: <em>30 dias.</em>'},
+   {type:'body', text:'<b>Dias 1 a 3.</b> A Valen mapeia a sua operação e os gargalos.', sm:true},
+   {type:'body', text:'<b>Dias 4 a 7.</b> Desenha o sistema sob medida da sua clínica.', sm:true},
+   {type:'body', text:'<b>Dias 8 a 21.</b> Constrói CRM, automações e agentes de IA.', sm:true},
+   {type:'body', text:'<b>Dias 22 a 30.</b> Sistema no ar, equipe treinada, operação monitorada.', sm:true},
+   {type:'solution', kick:'O melhor', text:'Sem você implementar nada. <em>A Valen faz tudo.</em>'},
+   {type:'cta', text:'Quer ver como isso ficaria na sua clínica?', cta:'Agende um diagnóstico'},
+ ]},
 ];
 
 const browser = await chromium.launch();
@@ -75,7 +94,7 @@ for(const post of posts){
     const html=`<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>${slideHTML(post,i,post.slides[i])}</body></html>`;
     await page.setContent(html,{waitUntil:'networkidle'});
     await page.evaluate(()=>document.fonts.ready);
-    await page.waitForTimeout(250);
+    await page.waitForTimeout(220);
     const f=`posts/${post.id}-${String(i+1).padStart(2,'0')}.png`;
     await page.locator('.slide').screenshot({path:f});
     console.log('rendered',f);
