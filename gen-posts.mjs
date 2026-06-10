@@ -63,21 +63,13 @@ function render(post,i){
  if(s.type==='stat') m=`<div class="bignum">${s.big}</div><p class="statsub">${s.sub}</p>${s.src?`<div class="src">${s.src}</div>`:''}`;
  if(s.type==='cta') m=`<p class="body">${s.text}</p><div><span class="ctapill">${s.cta} →</span></div>`;
  if(s.type==='whatsapp') m=`<h2 class="wtitle">${s.title}</h2><div class="wstage"><div class="wphone"><div class="wbar"><div class="wav"><img src="${lamCream}"></div><div><div class="nm">Paciente · Lead novo</div><div class="on">online agora</div></div></div><div class="wbody"><div class="sysn">Hoje, 23:14</div><div class="bub inc">Oi, vcs atendem harmonização? 😊</div><div class="bub out">Oi! Atendemos sim. Posso já ver um horário pra sua avaliação?<div class="tme">23:14 ✓✓</div></div><div class="bub inc">Pode!</div><div class="bub out">Agendei quinta, 15h. Confirmo no dia 👋<div class="tme">23:15 ✓✓</div></div><div class="sysn">✓ Agendado em 47 segundos</div></div></div></div>`;
- if(s.type==='receipt') m=`<h2 class="dtitle">Quanto custa um paciente que <em>some?</em></h2><div class="receipt"><div class="rrow"><span class="lab">1 paciente que não volta</span><strong>R$ 1.200</strong></div><div class="rrow"><span class="lab">Some por mês (média)</span><strong>× 8</strong></div><div class="rdiv"></div><div class="rtot"><span class="lab">Por ano, no ralo</span><span class="val">R$ 115 mil</span></div></div><div class="exlbl">* exemplo ilustrativo — faça a conta com os seus números</div>`;
+ if(s.type==='receipt') m=`<h2 class="dtitle">Quanto custa um paciente que <em>some?</em></h2><div class="receipt"><div class="rrow"><span class="lab">1 paciente que não volta</span><strong>R$ 1.200</strong></div><div class="rrow"><span class="lab">Some por mês (média)</span><strong>× 8</strong></div><div class="rdiv"></div><div class="rtot"><span class="lab">Por ano, no ralo</span><span class="val">R$ 115 mil</span></div></div><div class="exlbl">* exemplo ilustrativo, faça a conta com os seus números</div>`;
  if(s.type==='defpair'){const card=(x)=>`<div class="def"><div class="dico">${x.ic||'◆'}</div><h3>${x.t}</h3><p>${x.d}${x.ex?` <span class="ex">${x.ex}</span>`:''}</p></div>`;
    m=`<h2 class="dtitle">${s.title}</h2><div class="cards">${card(s.a)}${card(s.b)}</div>`;}
  return `<div class="slide ${t}"><div class="grid"></div><img class="wm" src="${t==='dark'?lamCream:lamInk}">${head(t,c)}<main>${m}</main>${foot(t,fr)}</div>`;
 }
 
 const posts=[
- {id:'wa',foot:'Diagnóstico no link',slides:[
-  {type:'cover',theme:'light',kick:'Bastidores do agente',hook:'O paciente te chamou às <em>23h.</em> Quem respondeu?'},
-  {type:'stat',theme:'dark',big:'21x',sub:'mais chance de fechar o lead quando a resposta sai em até 5 minutos.',src:'Fonte: Harvard Business Review'},
-  {type:'body',theme:'dark',text:'Só que <b>93%</b> das empresas demoram mais que isso. O lead não espera: vai pro concorrente.'},
-  {type:'whatsapp',theme:'light',title:'Enquanto você dorme, a <em>Valen agenda.</em>'},
-  {type:'body',theme:'light',text:'O agente atende, qualifica e agenda <b>24 horas por dia</b>. Sem secretária de plantão, sem lead perdido.'},
-  {type:'cta',theme:'light',text:'Quer um agente desses atendendo a sua clínica?',cta:'Diagnóstico no link'},
- ]},
  {id:'roi',foot:'Descubra no diagnóstico',slides:[
   {type:'cover',theme:'dark',kick:'A conta que ninguém faz',hook:'A conta que nenhuma clínica <em>quer fazer.</em>'},
   {type:'body',theme:'dark',text:'Um paciente que some não te avisa. Ele só <em>não volta.</em>'},

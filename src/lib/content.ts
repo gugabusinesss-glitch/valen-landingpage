@@ -1,5 +1,5 @@
 /**
- * Conteúdo da landing — derivado do Debriefing Estratégico da Valen.
+ * Conteudo da landing, derivado do Debriefing Estrategico da Valen.
  * Centralizado aqui pra editar copy sem mexer em componente.
  */
 
@@ -20,7 +20,7 @@ export const hero = {
 } as const;
 
 export const stats = [
-  { value: "5 min", label: "é o limite. Depois disso, o lead converte 80% menos." },
+  { value: "5 min", label: "é o tempo que decide se o lead fica com você ou some pro concorrente." },
   { value: "30 dias", label: "do contrato ao sistema no ar, com data no contrato." },
   { value: "24/7", label: "atendimento e follow-up que não falta, não dorme, não some." },
 ] as const;
