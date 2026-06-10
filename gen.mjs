@@ -67,6 +67,15 @@ const posts = [
    {type:'body', text:'Comercial, pós-venda, repasse médico e agentes de IA. Tudo <em>sob medida.</em>', sm:true},
    {type:'cta', text:'Esse perfil vai mostrar como virar a sua clínica do avesso.', cta:'Seguir @valen', sm:true},
  ]},
+ { id:'p3', foot:'Diagnóstico no link', slides:[
+   {type:'cover', kick:'A dor que ninguém vê', text:'Sua clínica perde paciente <em>todo dia.</em> E ninguém percebe.'},
+   {type:'body', text:'Um lead chega no WhatsApp às <b>14h03</b> querendo agendar.', sm:true},
+   {type:'body', text:'A secretária está atendendo. Ninguém responde na hora.', sm:true},
+   {type:'body', text:'Cada minuto sem resposta, o lead esfria. E vai pro concorrente que respondeu na hora.', sm:true},
+   {type:'body', text:'Ele não esperou.', sm:true},
+   {type:'solution', kick:'A virada', text:'A Valen responde, qualifica e agenda <em>em segundos.</em> 24 horas por dia.'},
+   {type:'cta', text:'Quantos pacientes sumiram essa semana sem você saber?', cta:'Diagnóstico no link'},
+ ]},
  { id:'p5', foot:'Diagnóstico no link', slides:[
    {type:'cover', kick:'A pergunta difícil', text:'Se você parar uma semana, a sua clínica <em>para junto?</em>'},
    {type:'body', text:'Esse é o sinal de que a clínica depende de você pra <b>tudo.</b>'},
