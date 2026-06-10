@@ -22,11 +22,7 @@ main{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justi
 .csub{font-size:29px;font-weight:500;margin-top:22px;max-width:780px}.light .csub{color:#5d655e}.dark .csub{color:#93a09a}
 .body{font-size:64px;font-weight:600;line-height:1.12;letter-spacing:-.01em;max-width:880px}
 .bsub{font-size:30px;font-weight:500;margin-top:22px;max-width:760px}.light .bsub{color:#5d655e}.dark .bsub{color:#93a09a}
-.bignum{font-size:330px;font-weight:900;line-height:.84;letter-spacing:-.04em;background:linear-gradient(180deg,#3bb7a6,#15625b);-webkit-background-clip:text;background-clip:text;color:transparent}
-.statsub{font-size:44px;font-weight:500;line-height:1.18;margin-top:18px;max-width:820px}.dark .statsub{color:#c7cdc7}
-.src{font-family:'Geist Mono',monospace;font-size:18px;margin-top:30px;display:inline-flex;gap:9px;color:#3bb7a6}.src::before{content:'↳'}
 .ctapill{display:inline-flex;align-items:center;gap:12px;background:#1c7268;color:#f6f3ea;font-weight:700;font-size:30px;padding:22px 38px;border-radius:999px;margin-top:38px}
-/* phone */
 .ctitle{font-size:46px;font-weight:700;line-height:1.08;margin-bottom:18px;max-width:880px}
 .ctitle .step{font-family:'Geist Mono',monospace;font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:#1b7a6f;display:block;margin-bottom:10px}
 .wstage{flex:1;display:flex;align-items:center;justify-content:center}
@@ -53,8 +49,8 @@ function bubbles(arr){return arr.map(b=>{
 function phone(contact,arr){return `<div class="wphone"><div class="wbar"><div class="wav"><img src="${lamCream}"></div><div><div class="nm">${contact}</div><div class="on">online agora</div></div></div><div class="wbody">${bubbles(arr)}</div></div>`;}
 
 const slides=[
- {t:'light',c:'01 / 06',r:'arraste →',m:`<div class="kick"><span class="dot"></span>Atendimento</div><h1 class="chook">Parece a sua melhor secretária. <em>É a Valen.</em></h1><p class="csub">Veja a IA atendendo um lead de verdade — do "oi" ao agendamento.</p>`},
- {t:'light',c:'02 / 06',r:'arraste →',m:`<h2 class="ctitle"><span class="step">Parte 1 · acolhe e entende</span>Ela mandou "oi". A IA <em>assumiu.</em></h2><div class="wstage">${phone('Danielle · Novo lead',[
+ {t:'light',c:'01 / 06',r:'arraste',m:`<div class="kick"><span class="dot"></span>Atendimento</div><h1 class="chook">Parece a sua melhor secretária. <em>É a Valen.</em></h1><p class="csub">Veja a IA atendendo um lead, do "oi" ao agendamento. (conversa ilustrativa)</p>`},
+ {t:'light',c:'02 / 06',r:'arraste',m:`<h2 class="ctitle"><span class="step">Parte 1 · acolhe e entende</span>Ela mandou "oi". A IA <em>assumiu.</em></h2><div class="wstage">${phone('Lead · novo contato',[
    {s:'Hoje · 15:25'},
    {who:'inc',x:'Olá! Vim pelo Instagram, queria mais informações sobre a consulta 🙂'},
    {who:'out',x:'Olá! Sou a assistente da clínica e vou cuidar do seu atendimento. Como posso te chamar?',t:'15:25'},
@@ -63,17 +59,17 @@ const slides=[
    {who:'inc',x:'Comecei a academia e preciso de um atestado. No último exame minha pressão tava alta e hoje não faço acompanhamento.'},
    {who:'out',x:'Entendi, Danielle 💚 Esse cuidado é muito importante, ainda mais com histórico de pressão. Você está no caminho certo.',t:'15:27'},
  ])}</div>`},
- {t:'light',c:'03 / 06',r:'arraste →',m:`<h2 class="ctitle"><span class="step">Parte 2 · mostra o valor e fecha</span>Explicou primeiro. Cobrou <em>depois.</em></h2><div class="wstage">${phone('Danielle · Novo lead',[
+ {t:'light',c:'03 / 06',r:'arraste',m:`<h2 class="ctitle"><span class="step">Parte 2 · mostra o valor e fecha</span>Explicou primeiro. Cobrou <em>depois.</em></h2><div class="wstage">${phone('Lead · novo contato',[
    {who:'out',x:'A consulta com a Dra. é completa (1h a 1h30): avalia histórico, hábitos, exames e saúde cardiovascular. Depois, monta um plano só pra você, com acompanhamento direto.',t:'15:37'},
    {who:'out',x:'Esse tipo de acompanhamento faz sentido pra você?',t:'15:37'},
    {who:'inc',x:'Faz sim!'},
-   {who:'out',x:'Que ótimo! 😊 A consulta é R$ 900 no cartão, ou R$ 850 à vista no Pix — já inclui retorno em até 45 dias e nota fiscal.',t:'16:01'},
-   {who:'out',x:'A próxima agenda da Dra. é 26/06, 08h30. Posso reservar pra você?',t:'16:01'},
+   {who:'out',x:'Que ótimo! 😊 A consulta é R$ 900 no cartão, ou R$ 850 à vista no Pix. Já inclui retorno em até 45 dias e nota fiscal.',t:'16:01'},
+   {who:'out',x:'A próxima agenda da Dra. é dia 26/06, às 08h30. Posso reservar pra você?',t:'16:01'},
    {who:'inc',x:'Pode! 🙌'},
-   {s:'✓ Acolhida, qualificada e agendada — sem ninguém da equipe disponível'},
+   {s:'✓ Acolhida, qualificada e agendada. Sem ninguém da equipe disponível.'},
  ])}</div>`},
- {t:'dark',c:'04 / 06',r:'arraste →',m:`<div class="kick"><span class="dot"></span>O que aconteceu ali</div><p class="body">Acolheu. Entendeu a dor. Mostrou o valor <em>antes</em> do preço. E fechou.</p><p class="bsub">Tudo que a sua melhor secretária faria — só que sem depender de ninguém e sem nunca dormir.</p>`},
- {t:'dark',c:'05 / 06',r:'arraste →',m:`<div class="bignum">21x</div><p class="statsub">mais chance de fechar o lead quando a resposta sai em até <b>5 minutos</b>. A Valen responde na hora, sempre.</p><div class="src">Fonte: Harvard Business Review</div>`},
+ {t:'dark',c:'04 / 06',r:'arraste',m:`<div class="kick"><span class="dot"></span>O que aconteceu ali</div><p class="body">Acolheu. Entendeu a dor. Mostrou o valor <em>antes</em> do preço. E fechou.</p><p class="bsub">Tudo que a sua melhor secretária faria. Só que sem depender de ninguém e sem nunca dormir.</p>`},
+ {t:'dark',c:'05 / 06',r:'arraste',m:`<div class="kick"><span class="dot"></span>A diferença</div><p class="body">Enquanto a maioria demora horas, a Valen já <em>acolheu, qualificou e agendou.</em></p><p class="bsub">Atendimento na hora, todo dia, sem depender de ninguém da equipe.</p>`},
  {t:'light',c:'06 / 06',r:'Diagnóstico no link',m:`<p class="body">Quer esse atendimento rodando na sua clínica <em>24 horas por dia?</em></p><div><span class="ctapill">Diagnóstico no link →</span></div>`},
 ];
 
